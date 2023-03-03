@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Amazon Review Highlighter",
+  "version": "1.0",
+  "description": "Highlights products on Amazon SERP with less than 50 reviews",
+  "author": "Hamza Jadoon",
+  "icons": {
+    "16": "h321.png",
+    "32": "h321.png",
+    "48": "h321.png",
+    "128": "h321.png"
+  },
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.amazon.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+    
+  ]
+}
